@@ -160,7 +160,7 @@
 									<tr>
 										<td style="width:20%"><img src="../../images/nails.jpg"></img></td>
 										<td style="width:40%">Nails</td>
-										<td style="width:40%">Hardware</td>
+										<td style="width:40%" id="category">Hardware</td>
 									</tr>
 								</table>
 							</li>
@@ -169,7 +169,7 @@
 									<tr>
 										<td style="width:20%"><img src="../../images/apple.jpg"></img></td>
 										<td style="width:40%">Apples</td>
-										<td style="width:40%">Fruit</td>
+										<td style="width:40%" id="category">Fruit</td>
 									</tr>
 								</table>
 							</li>
@@ -178,7 +178,7 @@
 									<tr>
 										<td style="width:20%"><img src="../../images/strawberry.jpg"></img></td>
 										<td style="width:40%">Strawberries</td>
-										<td style="width:40%">Fruit</td>
+										<td style="width:40%" id="category">Fruit</td>
 									</tr>
 								</table>
 							</li>
@@ -252,7 +252,7 @@
 										</select>
 									</td>
 									<td style="width:20%">
-										<img src="../../images/add.jpg"></img>
+										<img src="../../images/add.jpg" onclick="addUserRow(event)"></img>
 									</td>
 								</tr>
 
@@ -264,7 +264,7 @@
 										<h4>Owner</h4>
 									</td>
 									<td style="width:20%">
-										<img src="../../images/basket.jpg"></img>
+										<img src="../../images/basket.jpg" onclick="deleteUserRow(event)"></img>
 									</td>
 								</tr>
 
@@ -276,7 +276,7 @@
 										<h4>Guest</h4>
 									</td>
 									<td style="width:20%">
-										<img src="../../images/basket.jpg"></img>
+										<img src="../../images/basket.jpg" onclick="deleteUserRow(event)"></img>
 									</td>
 								</tr>
 
@@ -288,7 +288,7 @@
 										<h4>Guest</h4>
 									</td>
 									<td style="width:20%">
-										<img src="../../images/basket.jpg"></img>
+										<img src="../../images/basket.jpg" onclick="deleteUserRow(event)"></img>
 									</td>
 								</tr>
 
