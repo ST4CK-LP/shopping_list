@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/login_form.css">
 		<link rel="stylesheet" href="../css/grid_divider.css">
+		<link rel="stylesheet" href="../css/image_slider.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="../javascript/switch_form.js"></script>
@@ -15,6 +16,8 @@
 
 	<body>
 
+<!--	Menubar
+-->
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -36,6 +39,8 @@
 			</div>
 		</nav>
 
+<!--	List selection div
+-->
 		<div id="list-selection-div" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -59,6 +64,67 @@
 			</div>
 		</div>
 
+<!--	Product div
+-->
+		<div id="product-div" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Product Name (category)</h4>
+					</div>
+					<div class="modal-body">
+						<p>Description about this product</p>
+
+						<div class='row'>
+							<div class='col-md-10'>
+								<div class="carousel slide media-carousel" id="media">
+									<div class="carousel-inner">
+
+										<div class="item  active">
+											<div class="row">
+												<div class="col-md-4">
+													<a class="thumbnail" href="#"><img alt="" src="../../images/01.jpg"></a>
+												</div>          
+												<div class="col-md-4">
+													<a class="thumbnail" href="#"><img alt="" src="../../images/02.jpg"></a>
+												</div>
+												<div class="col-md-4">
+													<a class="thumbnail" href="#"><img alt="" src="../../images/03.jpg"></a>
+												</div>        
+											</div>
+										</div>
+
+										<div class="item">
+											<div class="row">
+												<div class="col-md-4">
+													<a class="thumbnail" href="#"><img alt="" src="../../images/04.jpg"></a>
+												</div>          
+												<div class="col-md-4">
+													<a class="thumbnail" href="#"><img alt="" src="../../images/05.jpg"></a>
+												</div>  
+											</div>
+										</div>
+
+									</div>
+									<a data-slide="prev" href="#media" class="left carousel-control"><</a>
+									<a data-slide="next" href="#media" class="right carousel-control">></a>
+									Add a photo
+									<input type="file" style="font-size: 15px;"></input>
+								</div>                          
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!--	Login/signup div
+-->
 		<div id="login-div" class="modal fade" role="dialog">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
@@ -146,7 +212,8 @@
 		<div class="container">
 			<div class="row grid-divider">
 
-
+<!--			Products (every user)
+-->
 				<div class="col-sm-4" style="min-width:375px; max-width:375px; box-sizing: border-box">
 					<div class="col-padding">
 						<h3>Products</h3>
@@ -158,7 +225,11 @@
 							<li class="list-group-item" title="Iron nails used to hang paintings" id="drag1" draggable="true" ondragstart="drag(event)">
 								<table style="width:100%">
 									<tr>
-										<td style="width:20%"><img src="../../images/nails.jpg"></img></td>
+										<td style="width:20%">
+											<a href="#" data-toggle="modal" data-target="#product-div" style="width:auto;">
+												<img src="../../images/nails.jpg"></img>
+											</a>
+										</td>
 										<td style="width:40%">Nails</td>
 										<td style="width:40%" id="category">Hardware</td>
 									</tr>
@@ -167,7 +238,11 @@
 							<li class="list-group-item" title="Tasty apples" id="drag2" draggable="true" ondragstart="drag(event)">
 								<table style="width:100%">
 									<tr>
-										<td style="width:20%"><img src="../../images/apple.jpg"></img></td>
+										<td style="width:20%">
+											<a href="#" data-toggle="modal" data-target="#product-div" style="width:auto;">
+												<img src="../../images/apple.jpg"></img>
+											</a>
+										</td>
 										<td style="width:40%">Apples</td>
 										<td style="width:40%" id="category">Fruit</td>
 									</tr>
@@ -176,7 +251,11 @@
 							<li class="list-group-item" title="Tasty strawberries" id="drag3" draggable="true" ondragstart="drag(event)">
 								<table style="width:100%">
 									<tr>
-										<td style="width:20%"><img src="../../images/strawberry.jpg"></img></td>
+										<td style="width:20%">
+											<a href="#" data-toggle="modal" data-target="#product-div" style="width:auto;">
+												<img src="../../images/strawberry.jpg"></img>
+											</a>
+										</td>
 										<td style="width:40%">Strawberries</td>
 										<td style="width:40%" id="category">Fruit</td>
 									</tr>
@@ -186,7 +265,8 @@
 					</div>
 				</div>
 
-
+<!--			List (every user)
+-->
 				<div class="col-sm-4" style="min-width:375px; max-width:375px; box-sizing: border-box"> 
 					<div class="col-padding">
 						<table style="width:350px">
@@ -215,7 +295,8 @@
 					</div>
 				</div>
 
-
+<!--			List options (only registered users)
+-->
 				<div class="col-sm-4" style="min-width:375px; max-width:375px; box-sizing: border-box"> 
 					<div class="col-padding">
 						<table style="width:350px">
