@@ -51,3 +51,10 @@ CREATE TABLE "Permission" (
 	FOREIGN KEY(`user`) REFERENCES User(id),
 	FOREIGN KEY(`list`) REFERENCES ShoppingList(id)
 );
+CREATE TABLE "ListProducts" (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`list`	INTEGER NOT NULL,
+	`product`	INTEGER NOT NULL,
+	FOREIGN KEY(`list`) REFERENCES ShoppingList(id),
+	FOREIGN KEY(`product`) REFERENCES Product(id)
+);
