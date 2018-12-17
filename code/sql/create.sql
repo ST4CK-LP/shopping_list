@@ -30,7 +30,6 @@ CREATE TABLE "ProductCategory" (
 CREATE TABLE "Product" (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
 	`name`	INTEGER NOT NULL,
-	`notes`	TEXT,
 	`logo`	TEXT NOT NULL,
 	`creator`	INTEGER,
 	`category`	INTEGER NOT NULL,
@@ -55,6 +54,7 @@ CREATE TABLE "ListProducts" (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
 	`list`	INTEGER NOT NULL,
 	`product`	INTEGER NOT NULL,
+	`notes`	TEXT,
 	FOREIGN KEY(`list`) REFERENCES ShoppingList(id),
 	FOREIGN KEY(`product`) REFERENCES Product(id)
 );
