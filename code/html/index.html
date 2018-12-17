@@ -50,11 +50,29 @@
 					</div>
 					<div class="modal-body">
 						<form id="list-selection">
-							<select>
-								<option>List 1</option>
-								<option>List 2</option>
-							</select>
-							<input type="submit" value="Display"></input>
+							<div class='row'>
+								<div class='col-md-3'>
+									<select>
+										<option>List 1</option>
+										<option>List 2</option>
+									</select>
+								</div>
+								<div class='col-md-9'>
+									<a href="#"><img src="../../images/add.jpg"></a> Create a new one
+								</div>
+							</div>
+							<br>
+							<div class='row'>
+								<div class="col-md-5">
+									<input type="submit" value="Display"></input>
+								</div>
+							</div>
+							<br>
+							<div class='row'>
+								<div class="col-md-5">
+									<a href="#"><img src="../../images/basket.jpg"></a>Delete this list
+								</div>
+							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
@@ -112,6 +130,11 @@
 									Add a photo
 									<input type="file" style="font-size: 15px;"></input>
 								</div>                          
+							</div>
+						</div>
+						<div class='row'>
+							<div class="col-md-5 col-md-offset-1">
+								<a href="#"><img src="../../images/basket.jpg"></a>Delete this product
 							</div>
 						</div>
 
@@ -222,6 +245,14 @@
 	  						<input class="form-control form-control-sm ml-3 w-75" id="myInput" type="text" placeholder="Search" aria-label="Search">
 						</form>
 						<ul class="list-group" id="myList">
+							<a class="list-group-item" title="Create a new product">
+								<table style="width:100%">
+									<tr>
+										<td style="width:20%"><a href="#"><img src="../../images/add.jpg"></img></a></td>
+										<td style="width:80%; color:grey;">Create a new product</td>
+									</tr>
+								</table>
+							</a>
 							<li class="list-group-item" title="Iron nails used to hang paintings" id="drag1" draggable="true" ondragstart="drag(event)">
 								<table style="width:100%">
 									<tr>
