@@ -29,7 +29,7 @@ CREATE TABLE "ProductCategory" (
 );
 CREATE TABLE "Product" (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-	`name`	INTEGER NOT NULL,
+	`name`	TEXT NOT NULL,
 	`logo`	TEXT NOT NULL,
 	`creator`	INTEGER,
 	`category`	INTEGER NOT NULL,
