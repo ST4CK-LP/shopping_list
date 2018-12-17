@@ -1,0 +1,53 @@
+CREATE TABLE `User` (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`user_type`	INTEGER NOT NULL,
+	`name`	TEXT NOT NULL,
+	`surname`	TEXT NOT NULL,
+	`avatar`	TEXT NOT NULL,
+	`email`	TEXT NOT NULL UNIQUE,
+	`password`	TEXT NOT NULL
+);
+CREATE TABLE "ShoppingListCategory" (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`name`	TEXT NOT NULL,
+	`description`	TEXT,
+	`image`	TEXT NOT NULL
+);
+CREATE TABLE "ShoppingList" (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`name`	TEXT NOT NULL,
+	`description`	TEXT NOT NULL,
+	`image`	TEXT NOT NULL,
+	`category`	INTEGER NOT NULL,
+	FOREIGN KEY(`category`) REFERENCES ShoppingListCategory(id)
+);
+CREATE TABLE "ProductCategory" (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`name`	TEXT NOT NULL,
+	`description`	TEXT,
+	`image`	TEXT NOT NULL
+);
+CREATE TABLE "Product" (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`name`	INTEGER NOT NULL,
+	`notes`	TEXT,
+	`logo`	TEXT NOT NULL,
+	`creator`	INTEGER,
+	`category`	INTEGER NOT NULL,
+	FOREIGN KEY(`creator`) REFERENCES User(id),
+	FOREIGN KEY(`category`) REFERENCES ProductCategory(id)
+);
+CREATE TABLE "Photo" (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`photo`	TEXT NOT NULL,
+	`product`	INTEGER NOT NULL,
+	FOREIGN KEY(`product`) REFERENCES Product(id)
+);
+CREATE TABLE "Permission" (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`user`	INTEGER NOT NULL,
+	`list`	INTEGER NOT NULL,
+	`permission`	INTEGER NOT NULL,
+	FOREIGN KEY(`user`) REFERENCES User(id),
+	FOREIGN KEY(`list`) REFERENCES ShoppingList(id)
+);
