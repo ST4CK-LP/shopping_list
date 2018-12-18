@@ -1,1 +1,1 @@
-SELECT `password` FROM `User` WHERE `email`=EMAIL;
+SELECT `id`,`password` FROM `User` WHERE `email`=EMAIL;
