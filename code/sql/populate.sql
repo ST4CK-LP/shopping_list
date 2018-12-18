@@ -119,3 +119,9 @@ VALUES
 (9,3,43),
 (10,3,48);
 
+INSERT INTO `Message`(`id`,`message`,`list`,`user`)
+VALUES
+(1,'List updtated, check it!',1,1),
+(2,'Shopping made!',1,3),
+(3,'List updtated, check it!',3,6);
+

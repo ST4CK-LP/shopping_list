@@ -58,3 +58,11 @@ CREATE TABLE "ListProducts" (
 	FOREIGN KEY(`list`) REFERENCES ShoppingList(id),
 	FOREIGN KEY(`product`) REFERENCES Product(id)
 );
+CREATE TABLE "Message" (
+	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	`message`	TEXT,
+	`list`	INTEGER NOT NULL,
+	`user`	INTEGER NOT NULL,
+	FOREIGN KEY(`list`) REFERENCES ShoppingList(id),
+	FOREIGN KEY(`user`) REFERENCES User(id)
+);
