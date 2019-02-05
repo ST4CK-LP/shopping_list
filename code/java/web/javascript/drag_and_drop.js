@@ -26,7 +26,7 @@ function drop(ev) {
 	var div = document.getElementById(data);
 	var target = document.getElementById("shopping-list");
 	clone = div.cloneNode(true);
-	clone.children[0].rows[0].cells[0].innerHTML = "<img src=\"../../images/basket.jpg\" onclick=\"deleteRow(event)\"></img>";
+	clone.children[0].rows[0].cells[0].innerHTML = "<img src=\"/java/images/basket.jpg\" onclick=\"deleteRow(event)\"></img>";
 	clone.children[0].rows[0].cells[2].innerHTML = "<input type=\"text\" style=\"width:120px\" placeholder=\"Notes\" aria-label=\"Notes\"></input>";
 	target.appendChild(clone);
 }
